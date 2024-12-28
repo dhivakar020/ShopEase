@@ -1,0 +1,59 @@
+### Get All Categories
+GET http://127.0.0.1:8000/api/categories/ HTTP/1.1
+Content-Type: application/json
+
+###
+
+### Create a New Category
+POST http://127.0.0.1:8000/api/categories/ HTTP/1.1
+Content-Type: application/json
+
+{
+  "category_name": "Electronics"
+}
+
+###
+
+### Get All Products
+GET http://127.0.0.1:8000/api/products/ HTTP/1.1
+Content-Type: application/json
+
+###
+
+### Create a New Product
+POST http://127.0.0.1:8000/api/products/ HTTP/1.1
+Content-Type: application/json
+
+{
+  "product_name": "Smartphone",
+  "description": "Latest model with 5G support",
+  "price": 699.99,
+  "stock_quantity": 50,
+  "category_id": 1
+}
+
+###
+
+### Get Product Details (Replace <product_id> with a valid ID)
+GET http://127.0.0.1:8000/api/products/1/ HTTP/1.1
+Content-Type: application/json
+
+###
+
+### Update a Product (Replace <product_id> with a valid ID)
+PUT http://127.0.0.1:8000/api/products/1/ HTTP/1.1
+Content-Type: application/json
+
+{
+  "product_name": "Updated Smartphone",
+  "description": "Updated model with enhanced features",
+  "price": 749.99,
+  "stock_quantity": 45,
+  "category_id": 1
+}
+
+###
+
+### Delete a Product (Replace <product_id> with a valid ID)
+DELETE http://127.0.0.1:8000/api/products/1/ HTTP/1.1
+Content-Type: application/json
