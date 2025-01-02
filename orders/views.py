@@ -42,12 +42,13 @@ class MakeOrderView(APIView):
                 }, status=status.HTTP_400_BAD_REQUEST)
             total_price += item.product.price * item.quantity
 
-        # Get shipping address from the request
+        # Getting shipping address from the request 
+        # added at the lsat commit
         shipping_address = request.data.get("shipping_address")
         if not shipping_address:
             return Response({"error": "Shipping address is required"}, status=status.HTTP_400_BAD_REQUEST)
 
-        # Create the order and order items
+        # Create new order and order items
         with transaction.atomic():
             order = Order.objects.create(
                 user_id=user_id,
@@ -61,13 +62,13 @@ class MakeOrderView(APIView):
                     order=order,
                     product=item.product,
                     quantity=item.quantity,
-                    price=item.product.price,  # Use price at the time of order
+                    price=item.product.price,  
                 )
-                # Reduce stock quantity
+                # always reduce stock quantity
                 item.product.stock_quantity -= item.quantity
                 item.product.save()
 
-            # Clear the cart
+            # always delete the cart after placing the order
             cart_items.delete()
 
         return Response({
@@ -99,7 +100,7 @@ class GetOrderDetailsView(APIView):
             return Response({"error": "Token not provided"}, status=status.HTTP_401_UNAUTHORIZED)
 
         try:
-            # Decode the JWT to get the user ID
+            # Decodin the JWT to get the user ID
             decoded_token = jwt.decode(token, settings.SECRET_KEY, algorithms=["HS256"])
             user_id = decoded_token.get("user_id")
         except jwt.ExpiredSignatureError:
@@ -107,7 +108,7 @@ class GetOrderDetailsView(APIView):
         except jwt.InvalidTokenError:
             return Response({"error": "Invalid token"}, status=status.HTTP_401_UNAUTHORIZED)
 
-        # Fetch orders for the user
+        # Fetch orders of the the user
         orders = Order.objects.filter(user_id=user_id)
 
         if not orders.exists():
