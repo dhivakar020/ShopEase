@@ -1,0 +1,21 @@
+### Make an Order
+POST http://127.0.0.1:8000/orders/makeOrder/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM1NzU0MjU5LCJpYXQiOjE3MzU3NTI0NTksImp0aSI6IjkyMDQ1NzQ3MzgzMjRiMmQ4NmY2MGQ0YWQwOTMwOGVhIiwidXNlcl9pZCI6NX0.OqrxII1CfaY6Rr3BYntuTynEyngPzbNi-sNsTBMnuGM
+Content-Type: application/json
+
+{
+  "shipping_address": "1234 Elm Street, Springfield"
+}
+
+###
+
+### Get Orders for a User
+GET http://127.0.0.1:8000/orders/getOrders/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM1NzU3MTA4LCJpYXQiOjE3MzU3NTUzMDgsImp0aSI6ImI0MDE4YmQ4MDMxZDRkZDhiMWJmMTA0NjRkZTY3Mzk1IiwidXNlcl9pZCI6NX0.LBtzJy1kmmWboRrG8w4n6oYoW7H-M4-GJa4z35BxF8k
+
+
+
+### Get Profile
+GET http://127.0.0.1:8000/users/getProfile/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM1NzU3MTA4LCJpYXQiOjE3MzU3NTUzMDgsImp0aSI6ImI0MDE4YmQ4MDMxZDRkZDhiMWJmMTA0NjRkZTY3Mzk1IiwidXNlcl9pZCI6NX0.LBtzJy1kmmWboRrG8w4n6oYoW7H-M4-GJa4z35BxF8k
+Content-Type: application/json

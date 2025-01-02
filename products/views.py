@@ -3,8 +3,10 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import Category, Product
 from .serializers import CategorySerializer, ProductSerializer
+from rest_framework.permissions import IsAuthenticated
 
 class CategoryListCreateView(APIView):
+    permission_classes = [IsAuthenticated]
     def get(self, request):
         categories = Category.objects.all()
         serializer = CategorySerializer(categories, many = True)

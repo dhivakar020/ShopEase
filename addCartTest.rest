@@ -1,0 +1,13 @@
+### Add Product to Cart
+POST http://127.0.0.1:8000/cart/addToCart/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM1NzI0NTAwLCJpYXQiOjE3MzU3MjI3MDAsImp0aSI6IjE5YTUwYTNlYjM0OTQ0ZDM5NTM5NzU3MmI0MGEzNzVkIiwidXNlcl9pZCI6M30.4fPi5gntsdM3Xix2wGJhzCOw1NmMGzaxsIH1JTmWLfc
+Content-Type: application/json
+
+{
+  "product_id": 17,
+  "quantity": -2
+}
+
+### Get Cart Items
+GET http://127.0.0.1:8000/cart/getCartItems/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM1NzU0MjU5LCJpYXQiOjE3MzU3NTI0NTksImp0aSI6IjkyMDQ1NzQ3MzgzMjRiMmQ4NmY2MGQ0YWQwOTMwOGVhIiwidXNlcl9pZCI6NX0.OqrxII1CfaY6Rr3BYntuTynEyngPzbNi-sNsTBMnuGM

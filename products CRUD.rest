@@ -1,7 +1,7 @@
 ### Get All Categories
 GET http://127.0.0.1:8000/api/categories/ HTTP/1.1
 Content-Type: application/json
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM1NjUwNjczLCJpYXQiOjE3MzU2NDg4NzMsImp0aSI6ImRmNzcwZWNlN2NmNDRkZTg4MTM1NmU1NzMyNjc1NjEyIiwidXNlcl9pZCI6M30.zAeqWl7GIWA3let4u98xwvraCnPrGdf0gRWOPI2ffBA
 ###
 
 ### Create a New Category
@@ -35,25 +35,32 @@ Content-Type: application/json
 ###
 
 ### Get Product Details (Replace <product_id> with a valid ID)
-GET http://127.0.0.1:8000/api/products/1/ HTTP/1.1
+GET http://127.0.0.1:8000/api/products/52/ HTTP/1.1
 Content-Type: application/json
 
 ###
 
 ### Update a Product (Replace <product_id> with a valid ID)
-PUT http://127.0.0.1:8000/api/products/1/ HTTP/1.1
+PUT http://127.0.0.1:8000/api/products/62/ HTTP/1.1
 Content-Type: application/json
 
 {
-  "product_name": "Updated Smartphone",
+  "product_name": "Nikon COOLPIX P900 Digital Camera",
   "description": "Updated model with enhanced features",
   "price": 749.99,
   "stock_quantity": 45,
-  "category_id": 1
+  "category_id": 11
 }
 
 ###
 
 ### Delete a Product (Replace <product_id> with a valid ID)
-DELETE http://127.0.0.1:8000/api/products/1/ HTTP/1.1
+DELETE http://127.0.0.1:8000/api/products/62/ HTTP/1.1
 Content-Type: application/json
+
+
+
+### try out
+GET http://127.0.0.1:8000/api/categories/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM1NjUxMDA2LCJpYXQiOjE3MzU2NDkyMDYsImp0aSI6IjBjNTYxNTJhNzNkNTQxODZiY2Q1MGYwYjg4ZGU0YmEzIiwidXNlcl9pZCI6M30.CeVfjFiwyOiLTlywN-Ayjs4FFskPlOmzvVjZ9AHqYNc
+Accept: application/json

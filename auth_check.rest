@@ -4,7 +4,7 @@ POST http://127.0.0.1:8000/users/signup/
 Content-Type: application/json
 
 {
-  "email": "user1@example.com",
+  "email": "user2@example.com",
   "password": "password123",
   "role": "customer"
 }
@@ -18,10 +18,44 @@ Content-Type: application/json
   "password": "password123"
 }
 
-### Invalid Signup (GET)
-GET http://127.0.0.1:8000/users/signup/
+### Signup - Create a new user
+POST http://localhost:8000/users/signup/
 Content-Type: application/json
 
-### Invalid Login (GET)
-GET http://127.0.0.1:8000/users/login/
+{
+    "email": "testuser1@example.com",
+    "password": "testpassword123",
+    "role": "customer"
+}
+
+###
+
+### Login - Authenticate a user and get JWT tokens
+POST http://localhost:8000/users/login/
 Content-Type: application/json
+
+{
+    "email": "testuser@example.com",
+    "password": "testpassword123"
+}
+
+###
+
+### Get JWT Token
+POST http://localhost:8000/users/api/token/
+Content-Type: application/json
+
+{
+    "email": "viper@vipermail.com",
+    "password": "viper123"
+}
+
+###
+
+### Refresh JWT Token
+POST http://localhost:8000/users/api/token/refresh/
+Content-Type: application/json
+
+{
+    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTczNTcwNzc3NywiaWF0IjoxNzM1NjIxMzc3LCJqdGkiOiI2NzAwMDQ1NGJhYmQ0MmJiYjg0YTIxMzkxODg2ZWNkYyIsInVzZXJfaWQiOjN9.XcLRRgtpCk8rEXhChKjdH08xB9vfjcvA0B_E6ATo9ik"
+}

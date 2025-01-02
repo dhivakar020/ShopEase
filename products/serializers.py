@@ -13,7 +13,7 @@ class ProductSerializer(serializers.ModelSerializer):
         source='category',
         write_only=True
     )
-    product_image = serializers.ImageField(required=False)  # Include ImageField for product images
+    product_image = serializers.ImageField(required=False)  
 
     class Meta:
         model = Product
